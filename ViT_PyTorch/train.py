@@ -185,7 +185,7 @@ if __name__ == '__main__':
     argparser.add_argument('--crop_margin', type=int, help='Margin for random cropping.', default=32)
     argparser.add_argument('--horizontal_flip', type=float, help='Horizontal flip prob.', default=0.5)
     argparser.add_argument('--rotation', type=float, help='Degree for random rotation.', default=10.)
-    argparser.add_argument('--device', type=str, help='Computation device.', default='cuda')
+    argparser.add_argument('--device', type=str, help='Computation device.', default='cpu') # default='cuda'
     argparser.add_argument('--random_seed', type=int, help='Random seed in this repo.', default=427)
      
     args = argparser.parse_args()

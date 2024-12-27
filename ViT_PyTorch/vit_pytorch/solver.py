@@ -140,9 +140,10 @@ class EarlyStopper:
         assert monitor in ('acc', 'loss')
 
         if monitor == 'loss':
-            self._best_metric = np.Inf
+            # self._best_metric = np.Inf
+            self._best_metric = np.inf
         else:
-            self._best_metric = -np.Inf
+            self._best_metric = -np.inf
 
         self.monitor = monitor
         self.patient = patient

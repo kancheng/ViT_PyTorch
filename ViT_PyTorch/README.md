@@ -1,8 +1,7 @@
-# ViT PyTorch Demo
+# ViT_PyTorch
 This is a simple PyTorch implementation of Vision Transformer (ViT) described in the paper "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"
 
 ![image](https://user-images.githubusercontent.com/39369205/116412646-79987880-a869-11eb-9a43-7bb6b7036015.png)
-
 
 # Usage
 ## Download pre-trained weights.
@@ -18,29 +17,6 @@ You can train ViT on your own dataset by following command :
 python train.py /train/data/folder/ --valid_dir /validation/data/folder/ --pretrained_weights /pre-trained/weights/path 
 ```
 Check out the [Colab](https://colab.research.google.com/drive/1s6SMji0U4KzyEdhhoMRaHxxWNaqpsXBZ?usp=sharing) for preparing data, fine-tuning the model, and inference.
-
-# Example
-
-## Install
-
-```
-pip install -r requirements.txt
-```
-
-## Datasets
-
-- [cats_and_dogs] (https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip)
-
-## weights
-
-- [B_16_384] (https://drive.usercontent.google.com/download?id=1ieMKenlTkOtoNcPnjv13TnIdygBLWVFQ&authuser=0)
-
-## Demo
-
-```
-python ViT_PyTorch/train.py ./tmp/cats_and_dogs_filtered/train --valid_dir ./tmp/cats_and_dogs_filtered/validation --output_dir cat_vs_dog_results --model_config B_16_384 --pretrained_weights ./content/imagenet21k+imagenet2012_ViT-B_16_384.pt --freeze_extractor True --batch_size 256 --init_lr 1e-3 --max_epoch 10 --patient 3 --warmup 1 --image_size 384 --max_epoch 10
-```
-
 
 ### Details about training arguments :
 Argument|Description|Type|Default
