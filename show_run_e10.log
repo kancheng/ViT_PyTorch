@@ -1,0 +1,156 @@
+(teach) PS D:\proj\test-vit\colab> python ViT_PyTorch/train.py ./tmp/cats_and_dogs_filtered/train --valid_dir ./tmp/cats_and_dogs_filtered/validation --output_dir cat_vs_dog_results --model_config B_16_384 --pretrained_weights ./content/imagenet21k+imagenet2012_ViT-B_16_384.pt --freeze_extractor True --batch_size 256 --init_lr 1e-3 --max_epoch 10 --patient 3 --warmup 1 --image_size 384 --max_epoch 10
+Create data loaders.
+Number of classes : 2.
+Training sample : 2000.
+Validation sample : 1000.
+Build model.
+D:\proj\test-vit\colab\ViT_PyTorch\train.py:44: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(args.pretrained_weights))
+Successfully load pre-trained weights from `./content/imagenet21k+imagenet2012_ViT-B_16_384.pt`
+Freeze feature extractor weights.
+Start training.
+[Epoch 1][0/8][Train][Loss 0.723198][Acc 0.476562]
+[Epoch 1][1/8][Train][Loss 0.619069][Acc 0.664062]
+[Epoch 1][2/8][Train][Loss 0.564751][Acc 0.750000]
+[Epoch 1][3/8][Train][Loss 0.487017][Acc 0.882812]
+[Epoch 1][4/8][Train][Loss 0.418874][Acc 0.910156]
+[Epoch 1][5/8][Train][Loss 0.356728][Acc 0.945312]
+[Epoch 1][6/8][Train][Loss 0.327775][Acc 0.972656]
+[Epoch 1][7/8][Train][Loss 0.276877][Acc 0.975962]
+[Epoch 1][0/4][Eval][Loss 0.171992][Acc 0.996094]
+[Epoch 1][1/4][Eval][Loss 0.180838][Acc 1.000000]
+[Epoch 1][2/4][Eval][Loss 0.301360][Acc 0.984375]
+[Epoch 1][3/4][Eval][Loss 0.302813][Acc 0.978448]
+Monitored metric `loss` has improved from `inf` to `0.239251`
+Successfully save weights to `cat_vs_dog_results\improved_ep1.pt`
+[Epoch 2][1/8][Train][Loss 0.211779][Acc 0.996094]
+[Epoch 2][2/8][Train][Loss 0.188164][Acc 0.988281]
+[Epoch 2][3/8][Train][Loss 0.174873][Acc 0.988281]
+[Epoch 2][4/8][Train][Loss 0.151967][Acc 0.988281]
+[Epoch 2][5/8][Train][Loss 0.123613][Acc 0.996094]
+[Epoch 2][6/8][Train][Loss 0.121998][Acc 1.000000]
+
+[Epoch 2][7/8][Train][Loss 0.122709][Acc 0.995192]
+[Epoch 2][0/4][Eval][Loss 0.080045][Acc 0.996094]
+[Epoch 2][1/4][Eval][Loss 0.080214][Acc 1.000000]
+[Epoch 2][2/4][Eval][Loss 0.106724][Acc 1.000000]
+[Epoch 2][3/4][Eval][Loss 0.109783][Acc 1.000000]
+Monitored metric `loss` has improved from `0.239251` to `0.094192`
+Successfully save weights to `cat_vs_dog_results\improved_ep2.pt`
+[Epoch 3][0/8][Train][Loss 0.100538][Acc 0.992188]
+[Epoch 3][1/8][Train][Loss 0.083218][Acc 1.000000]
+[Epoch 3][2/8][Train][Loss 0.079446][Acc 0.996094]
+[Epoch 3][3/8][Train][Loss 0.074911][Acc 0.996094]
+[Epoch 3][4/8][Train][Loss 0.086986][Acc 0.992188]
+[Epoch 3][5/8][Train][Loss 0.070782][Acc 1.000000]
+[Epoch 3][6/8][Train][Loss 0.056436][Acc 1.000000]
+[Epoch 3][7/8][Train][Loss 0.056628][Acc 1.000000]
+[Epoch 3][0/4][Eval][Loss 0.054691][Acc 0.996094]
+[Epoch 3][1/4][Eval][Loss 0.050355][Acc 1.000000]
+[Epoch 3][2/4][Eval][Loss 0.048469][Acc 1.000000]
+[Epoch 3][3/4][Eval][Loss 0.050484][Acc 1.000000]
+Monitored metric `loss` has improved from `0.094192` to `0.051000`
+Successfully save weights to `cat_vs_dog_results\improved_ep3.pt`
+[Epoch 4][0/8][Train][Loss 0.047780][Acc 1.000000]
+[Epoch 4][1/8][Train][Loss 0.042469][Acc 1.000000]
+[Epoch 4][2/8][Train][Loss 0.048063][Acc 0.996094]
+[Epoch 4][3/8][Train][Loss 0.042188][Acc 1.000000]
+[Epoch 4][4/8][Train][Loss 0.041642][Acc 1.000000]
+[Epoch 4][5/8][Train][Loss 0.051236][Acc 0.992188]
+[Epoch 4][6/8][Train][Loss 0.052001][Acc 0.988281]
+[Epoch 4][7/8][Train][Loss 0.039797][Acc 0.995192]
+[Epoch 4][0/4][Eval][Loss 0.041163][Acc 0.996094]
+[Epoch 4][1/4][Eval][Loss 0.034848][Acc 1.000000]
+[Epoch 4][2/4][Eval][Loss 0.029987][Acc 1.000000]
+[Epoch 4][3/4][Eval][Loss 0.031446][Acc 1.000000]
+Monitored metric `loss` has improved from `0.051000` to `0.034361`
+Successfully save weights to `cat_vs_dog_results\improved_ep4.pt`
+[Epoch 5][0/8][Train][Loss 0.051973][Acc 0.996094]
+[Epoch 5][1/8][Train][Loss 0.026714][Acc 1.000000]
+[Epoch 5][2/8][Train][Loss 0.023528][Acc 1.000000]
+[Epoch 5][3/8][Train][Loss 0.032954][Acc 0.996094]
+[Epoch 5][4/8][Train][Loss 0.036300][Acc 0.992188]
+[Epoch 5][5/8][Train][Loss 0.027904][Acc 1.000000]
+[Epoch 5][6/8][Train][Loss 0.032515][Acc 1.000000]
+[Epoch 5][7/8][Train][Loss 0.039770][Acc 0.995192]
+[Epoch 5][0/4][Eval][Loss 0.031898][Acc 0.996094]
+[Epoch 5][1/4][Eval][Loss 0.025028][Acc 1.000000]
+[Epoch 5][2/4][Eval][Loss 0.022924][Acc 1.000000]
+[Epoch 5][3/4][Eval][Loss 0.024209][Acc 1.000000]
+Monitored metric `loss` has improved from `0.034361` to `0.026015`
+Successfully save weights to `cat_vs_dog_results\improved_ep5.pt`
+[Epoch 6][0/8][Train][Loss 0.031209][Acc 0.996094]
+[Epoch 6][1/8][Train][Loss 0.028823][Acc 0.996094]
+[Epoch 6][2/8][Train][Loss 0.026919][Acc 0.996094]
+[Epoch 6][3/8][Train][Loss 0.028314][Acc 0.996094]
+[Epoch 6][4/8][Train][Loss 0.022897][Acc 1.000000]
+[Epoch 6][5/8][Train][Loss 0.021764][Acc 1.000000]
+[Epoch 6][6/8][Train][Loss 0.039078][Acc 0.992188]
+[Epoch 6][7/8][Train][Loss 0.027146][Acc 0.995192]
+[Epoch 6][0/4][Eval][Loss 0.026908][Acc 0.996094]
+[Epoch 6][1/4][Eval][Loss 0.019791][Acc 1.000000]
+[Epoch 6][2/4][Eval][Loss 0.018825][Acc 1.000000]
+[Epoch 6][3/4][Eval][Loss 0.020022][Acc 1.000000]
+Monitored metric `loss` has improved from `0.026015` to `0.021387`
+Successfully save weights to `cat_vs_dog_results\improved_ep6.pt`
+[Epoch 7][0/8][Train][Loss 0.034686][Acc 0.996094]
+[Epoch 7][1/8][Train][Loss 0.020116][Acc 1.000000]
+[Epoch 7][2/8][Train][Loss 0.025407][Acc 0.996094]
+[Epoch 7][3/8][Train][Loss 0.032688][Acc 0.992188]
+[Epoch 7][4/8][Train][Loss 0.016772][Acc 1.000000]
+[Epoch 7][5/8][Train][Loss 0.023771][Acc 1.000000]
+[Epoch 7][6/8][Train][Loss 0.022742][Acc 0.996094]
+[Epoch 7][7/8][Train][Loss 0.021959][Acc 1.000000]
+[Epoch 7][0/4][Eval][Loss 0.023180][Acc 0.996094]
+[Epoch 7][1/4][Eval][Loss 0.016162][Acc 1.000000]
+[Epoch 7][2/4][Eval][Loss 0.016509][Acc 1.000000]
+[Epoch 7][3/4][Eval][Loss 0.017713][Acc 1.000000]
+Monitored metric `loss` has improved from `0.021387` to `0.018391`
+Successfully save weights to `cat_vs_dog_results\improved_ep7.pt`
+[Epoch 8][0/8][Train][Loss 0.021220][Acc 1.000000]
+[Epoch 8][1/8][Train][Loss 0.019390][Acc 1.000000]
+[Epoch 8][2/8][Train][Loss 0.022443][Acc 0.996094]
+[Epoch 8][3/8][Train][Loss 0.018338][Acc 1.000000]
+[Epoch 8][4/8][Train][Loss 0.021637][Acc 0.996094]
+[Epoch 8][5/8][Train][Loss 0.025903][Acc 0.992188]
+[Epoch 8][6/8][Train][Loss 0.028030][Acc 0.996094]
+[Epoch 8][7/8][Train][Loss 0.014431][Acc 1.000000]
+[Epoch 8][0/4][Eval][Loss 0.020864][Acc 0.996094]
+[Epoch 8][1/4][Eval][Loss 0.013874][Acc 1.000000]
+[Epoch 8][2/4][Eval][Loss 0.014648][Acc 1.000000]
+[Epoch 8][3/4][Eval][Loss 0.015863][Acc 1.000000]
+Monitored metric `loss` has improved from `0.018391` to `0.016312`
+Successfully save weights to `cat_vs_dog_results\improved_ep8.pt`
+[Epoch 9][0/8][Train][Loss 0.014869][Acc 1.000000]
+[Epoch 9][1/8][Train][Loss 0.018052][Acc 1.000000]
+[Epoch 9][2/8][Train][Loss 0.017865][Acc 1.000000]
+[Epoch 9][3/8][Train][Loss 0.023044][Acc 0.996094]
+[Epoch 9][4/8][Train][Loss 0.023158][Acc 0.996094]
+[Epoch 9][5/8][Train][Loss 0.014675][Acc 1.000000]
+[Epoch 9][6/8][Train][Loss 0.012942][Acc 1.000000]
+[Epoch 9][7/8][Train][Loss 0.039812][Acc 0.985577]
+[Epoch 9][0/4][Eval][Loss 0.019465][Acc 0.996094]
+[Epoch 9][1/4][Eval][Loss 0.012417][Acc 1.000000]
+[Epoch 9][2/4][Eval][Loss 0.013029][Acc 1.000000]
+[Epoch 9][3/4][Eval][Loss 0.014225][Acc 1.000000]
+Monitored metric `loss` has improved from `0.016312` to `0.014784`
+Successfully save weights to `cat_vs_dog_results\improved_ep9.pt`
+[Epoch 10][0/8][Train][Loss 0.028729][Acc 0.992188]
+[Epoch 10][1/8][Train][Loss 0.014264][Acc 1.000000]
+[Epoch 10][2/8][Train][Loss 0.013300][Acc 1.000000]
+[Epoch 10][3/8][Train][Loss 0.017340][Acc 1.000000]
+[Epoch 10][4/8][Train][Loss 0.026401][Acc 0.996094]
+[Epoch 10][5/8][Train][Loss 0.016125][Acc 0.996094]
+[Epoch 10][6/8][Train][Loss 0.013425][Acc 0.996094]
+[Epoch 10][7/8][Train][Loss 0.017887][Acc 0.995192]
+[Epoch 10][0/4][Eval][Loss 0.018100][Acc 0.996094]
+[Epoch 10][1/4][Eval][Loss 0.011164][Acc 1.000000]
+[Epoch 10][2/4][Eval][Loss 0.011860][Acc 1.000000]
+[Epoch 10][3/4][Eval][Loss 0.013078][Acc 1.000000]
+Monitored metric `loss` has improved from `0.014784` to `0.013550`
+Successfully save weights to `cat_vs_dog_results\improved_ep10.pt`
+Successfully save weights to `cat_vs_dog_results\weights.pt`
+Successfully save training history to `cat_vs_dog_results/`
+Successfully save training history to `cat_vs_dog_results/*`
+Training process done.
+(teach) PS D:\proj\test-vit\colab>
