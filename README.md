@@ -72,5 +72,5 @@ image_size|Input image size.|int|384
 crop_margin|Margin for random cropping.|int|32
 horizontal_flip|Horizontal flip probability.|float|0.5
 rotation|Degree for random rotation.|float|10.
-device|Computation device. ('cuda' or 'cpu')|str|cuda
+device|Computation device. ('cuda' or 'cpu')|str|cpu
 random_seed|Random seed in this repo.|int|427
